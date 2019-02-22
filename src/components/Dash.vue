@@ -103,7 +103,8 @@ export default {
 }
 
 .user-panel {
-  height: 4em;
+  height: 10em;
+  border-bottom:2px solid #f8f8f8;
 }
 
 hr.visible-xs-block {

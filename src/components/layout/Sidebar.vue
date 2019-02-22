@@ -19,24 +19,12 @@
         </div>
       </div>
 
-      <!-- search form (Optional) -->
-      <form v-on:submit.prevent class="sidebar-form" id="searchForm">
-        <div class="input-group" id="searchContainer">
-          <span class="input-group-btn">
-            <input type="text"
-            name="search"
-            id="search"
-            class="search form-control"
-            data-toggle="hideseek" p
-            laceholder="Search Menus"
-            data-list=".sidebar-menu">
-            <button type="submit" name="search" id="search-btn" class="btn btn-flat">
-              <i class="fa fa-search"></i>
-            </button>
-          </span>
-        </div>
-      </form>
-      <!-- /.search form -->
+      <div class="user-status">
+        <h5>Status</h5>
+        <p>Staging <i class="fa fa-circle text-yellow"></i></p>
+        <h5>Primary Domain</h5>
+        <p>http://www.google.com</p>
+      </div>
 
       <!-- Sidebar Menu -->
       <sidebar-menu />
@@ -64,20 +52,23 @@ export default {
 .user-panel .image img {
   border-radius: 50%;
 }
-#searchForm {
-  padding-left: 0em;
-  padding-right: 0em;
+.user-status{
+  min-height: 7em;
+  border-bottom:2px solid #f8f8f8;
+  margin-bottom: 10px;
+  padding: 5px 10px 10px;
 }
-#searchContainer {
-  height: 100%;
-  padding-bottom: 0em;
+.user-status h5{
+  color: #b2b2b2;
+  margin-bottom: 0;
 }
-#search {
-  width: 80%;
-  float: right;
+.user-status p{
+  margin-bottom: 0;
+  font-size: 16px;
 }
-
-#search-btn {
-  width: 20%;
+.user-status .fa{
+  font-size: 10px;
+  vertical-align: middle;
+  margin-left: 5px;
 }
 </style>

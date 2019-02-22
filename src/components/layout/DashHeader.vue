@@ -6,16 +6,17 @@
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" role="navigation">
       <!-- Sidebar toggle button-->
-      <a href="javascript:;" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-        <span class="sr-only">Toggle navigation</span>
+      <a href="javascript:;" data-toggle="offcanvas" role="button">
+        <!-- <span class="sr-only">Toggle navigation</span> -->
+        <img src="/static/svg-icons/Menu.svg" class="toggle-icon" alt="">
       </a>
 
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          <messages-menu></messages-menu>
+          <!-- <messages-menu></messages-menu> -->
           <notifications-menu></notifications-menu>
-          <tasks-menu></tasks-menu>
+          <!-- <tasks-menu></tasks-menu> -->
           <user-menu :user="user"></user-menu>
         </ul>
       </div>
@@ -25,17 +26,15 @@
 
 <script>
 import { mapState } from 'vuex'
-import MessagesMenu from './MessagesMenu'
+// import MessagesMenu from './MessagesMenu'
 import NotificationsMenu from './NotificationsMenu'
-import TasksMenu from './TasksMenu'
+// import TasksMenu from './TasksMenu'
 import UserMenu from './UserMenu'
 
 export default {
   name: 'DashHeader',
   components: {
-    MessagesMenu,
     NotificationsMenu,
-    TasksMenu,
     UserMenu
   },
   props: ['user'],
@@ -46,3 +45,10 @@ export default {
   }
 }
 </script>
+<style>
+.toggle-icon{
+  width: 25px;
+  margin-top: 17px;
+}
+</style>
+

@@ -2,7 +2,8 @@
   <li class="dropdown notifications-menu">
     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
       <i class="fa fa-bell-o"></i>
-      <span class="label label-warning">{{ newNotifications | count }}</span>
+      <!-- <span class="label label-warning">{{ newNotifications | count }}</span> -->
+      <span class="label"><i class="fa fa-circle text-success"></i></span>
     </a>
     <ul class="dropdown-menu">
       <li class="header">
