@@ -6,17 +6,18 @@
 
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
-        <div class="pull-left image">
-          <img :src="user.avatar" />
-        </div>
-        <div class="pull-left info">
-          <div>
-            <p class="white">{{user.displayName}}</p>
-          </div>
-          <a href="javascript:;">
-            <i class="fa fa-circle text-success"></i> Online
-          </a>
-        </div>
+        <p class="text-center">
+          <strong>Language Overview</strong>
+        </p>
+        <canvas id="pieChart"></canvas>
+
+        <div class="c100 p2-0 orange">
+								<span>test</span>
+								<div class="slice">
+									<div class="bar"></div>
+									<div class="fill"></div>
+								</div>
+							</div>
       </div>
 
       <div class="user-status">
@@ -35,16 +36,37 @@
 </template>
 <script>
 import SidebarMenu from './SidebarMenu'
+import Chart from 'chart.js'
 
 export default {
   name: 'Sidebar',
   props: ['user'],
   components: { SidebarMenu },
-  mounted: function() {
-    window
-      .jQuery('[data-toggle="hideseek"]')
-      .off()
-      .hideseek()
+  mounted() {
+    window.jQuery('[data-toggle="hideseek"]').off().hideseek()
+    this.$nextTick(() => {
+      var pieChartCanvas1 = document.getElementById('pieChart').getContext('2d')
+      var pieConfig1 = {
+        type: 'doughnut',
+        data: {
+          labels: ['HTML', 'JavaScript', 'CSS'],
+          datasets: [{
+            data: [56.6, 37.7, 4.1],
+            backgroundColor: ['#00a65a', '#f39c12', '#00c0ef'],
+            hoverBackgroundColor: ['#00a65a', '#f39c12', '#00c0ef']
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: !this.isMobile,
+          legend: {
+            position: 'bottom',
+            display: true
+          }
+        }
+      }
+      new Chart(pieChartCanvas1, pieConfig1) // eslint-disable-line no-new
+    })
   }
 }
 </script>
