@@ -10,14 +10,7 @@
           <strong>Language Overview</strong>
         </p>
         <canvas id="pieChart"></canvas>
-
-        <div class="c100 p2-0 orange">
-								<span>test</span>
-								<div class="slice">
-									<div class="bar"></div>
-									<div class="fill"></div>
-								</div>
-							</div>
+        
       </div>
 
       <div class="user-status">
