@@ -2,9 +2,10 @@
   <li class="dropdown user user-menu">
     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
       <!-- The user image in the navbar-->
-      <span data-v-4977bc54="" class="label"><i data-v-4977bc54="" class="fa fa-circle text-success"></i></span>
 
       <img :src="user.avatar" class="user-image" alt="User Image">
+      <span class="label user-status"><i class="fa fa-circle text-success"></i></span>
+
       <!-- hidden-xs hides the username on small devices so only the image appears. -->
       <span class="hidden-xs">{{user.displayName}}</span>
     </a>
@@ -32,3 +33,8 @@ export default {
   props: ['user']
 }
 </script>
+<style>
+.user-status{
+  right:95px !important;
+}
+</style>

@@ -1,7 +1,8 @@
 <template>
   <li class="dropdown notifications-menu">
     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
-      <i class="fa fa-bell-o"></i>
+      <!-- <i class="fa fa-bell-o"></i> -->
+      <img src="/static/svg-icons/Notification.svg" class="svg-icon" alt="">
       <!-- <span class="label label-warning">{{ newNotifications | count }}</span> -->
       <span class="label"><i class="fa fa-circle text-success"></i></span>
     </a>
@@ -112,5 +113,8 @@ export default {
 }
 .navbar-custom-menu > .navbar-nav > li.notifications-menu > .dropdown-menu li:hover.footer > a {
   color: #3c8dbc !important;
+}
+.svg-icon{
+  margin-right: 0 !important;
 }
 </style>
