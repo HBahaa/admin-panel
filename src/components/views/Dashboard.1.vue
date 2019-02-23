@@ -1,96 +1,78 @@
 <template>
   <!-- Main content -->
   <section class="content">
-    
-    <div class="circle-chart">
-      <div class="row">
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class='info-box'>
-            <span>
-              <div class='c100 p30'>
-                <span>30%</span>
-                <div class='slice'>
-                  <div class='bar'></div>
-                  <div class='fill'></div>
-                </div>
-              </div>
-            </span>
-            <div class="info-box-content"><span class="info-box-text">Registrations</span> <span class="info-box-number">1000</span></div>
-          </div>
-        </div>
-
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class='info-box'>
-            <span>
-              <div class='c100 p30 second-circle'>
-                <span>30%</span>
-                <div class='slice'>
-                  <div class='bar'></div>
-                  <div class='fill'></div>
-                </div>
-              </div>
-            </span>
-            <div class="info-box-content"><span class="info-box-text">Active users</span> <span class="info-box-number">300</span></div>
-          </div>
-        </div>
-
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class='info-box'>
-            <span>
-              <div class='c100 p30 third-circle'>
-                <span>30%</span>
-                <div class='slice'>
-                  <div class='bar'></div>
-                  <div class='fill'></div>
-                </div>
-              </div>
-            </span>
-            <div class="info-box-content"><span class="info-box-text">Total webstie visits</span> <span class="info-box-number">196</span></div>
-          </div>
-        </div>
-
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class='info-box last'>
-            <span>
-              <div class='c100 p45 orange'>
-                <span>45%</span>
-                <div class='slice'>
-                  <div class='bar'></div>
-                  <div class='fill'></div>
-                </div>
-              </div>
-            </span>
-            <div class="info-box-content"><span class="info-box-text">Visits per active users</span> <span class="info-box-number">163</span></div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
+    <!-- GitHub hint -->
     <div class="row">
       <div class="col-xs-12">
-        <div class="box">
-          <div class="box-header with-border">
-            <h3 class="box-title"></h3>
-            <div class="box-body">
-              <div class="col-sm-6 col-xs-12">
-                <p class="text-center">
-                  <strong>Web Traffic Overview</strong>
-                </p>
-                <canvas id="trafficBar" ></canvas>
-              </div>
-              <hr class="visible-xs-block">
-              <div class="col-sm-6 col-xs-12">
-                <p class="text-center">
-                  <strong>Language Overview</strong>
-                </p>
-                <canvas id="languagePie"></canvas>
-              </div>
+        <alert :dismissible="true"
+               type="success"
+               :iconClasses="['fa', 'fa-check']"
+               title="Admin Panel is open source!">
+          <span>Click on icon to check it out on github.</span>
+          <a href="#" target="_blank">
+            <i class="fa fa-github fa-2x"></i>
+          </a>
+        </alert>
+      </div>
+
+      <!-- Info boxes -->
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <info-box color-class="bg-aqua"
+                  :icon-classes="['ion', 'ion-ios-gear-outline']"
+                  text="CPU Traffic"
+                  number="90%"></info-box>
+      </div>
+      <!-- /.col -->
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <info-box color-class="bg-red"
+                  :icon-classes="['fa', 'fa-google-plus']"
+                  text="Likes"
+                  number="41,410"></info-box>
+      </div>
+      <!-- /.col -->
+
+      <!-- fix for small devices only -->
+      <div class="clearfix visible-sm-block"></div>
+      
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <info-box color-class="bg-green"
+                  :icon-classes="['ion', 'ion-ios-cart-outline']"
+                  text="Sales"
+                  number="760"></info-box>
+      </div>
+      <!-- /.col -->
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <info-box color-class="bg-yellow"
+                  :icon-classes="['ion', 'ion-ios-people-outline']"
+                  text="New Members"
+                  number="2,000"></info-box>
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
+
+    <div class="col-xs-12">
+      <div class="box">
+        <div class="box-header with-border">
+          <h3 class="box-title"></h3>
+          <div class="box-body">
+            <div class="col-sm-6 col-xs-12">
+              <p class="text-center">
+                <strong>Web Traffic Overview</strong>
+              </p>
+              <canvas id="trafficBar" ></canvas>
+            </div>
+            <hr class="visible-xs-block">
+            <div class="col-sm-6 col-xs-12">
+              <p class="text-center">
+                <strong>Language Overview</strong>
+              </p>
+              <canvas id="languagePie"></canvas>
             </div>
           </div>
-          <div class="text-center">
-            <small><b>Pro Tip</b> Don't forget to star us on github!</small>
-          </div>
+        </div>
+        <div class="text-center">
+          <small><b>Pro Tip</b> Don't forget to star us on github!</small>
         </div>
       </div>
     </div>
@@ -242,25 +224,9 @@ export default {
 }
 </script>
 <style>
-.circle-chart{
-  min-height: 160px;
-  background-color: #fff;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-.circle-chart .info-box {
+.info-box {
   cursor: pointer;
-  min-height: 160px;
-  padding: 20px;
-  margin-bottom: 0;
-  background-color: transparent;
-  box-shadow: none;
-  border-right: 2px solid #f8f8f8;
 }
-.circle-chart .info-box.last{
-  border-right: 0;  
-}
-
 .info-box-content {
   text-align: center;
   vertical-align: middle;
@@ -268,29 +234,5 @@ export default {
 }
 .fullCanvas {
   width: 100%;
-}
-
-.circle-chart .info-box-content{
-  margin-top: 12px;
-}
-.circle-chart .info-box-text{
-  font-size: 14px;
-  text-transform: capitalize;
-}
-.circle-chart .info-box-number{
-  font-size: 32px;
-  font-weight: 400;
-}
-.second-circle:hover > span, .second-circle > span{
-  color: #4c84ff;
-}
-.c100.second-circle .bar{
-  border-color: #4c84ff !important;
-}
-.third-circle:hover > span, .third-circle > span{
-  color: #29cc97;
-}
-.c100.third-circle .bar{
-  border-color: #29cc97 !important;
 }
 </style>
