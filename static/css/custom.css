@@ -34,7 +34,7 @@
 
 @media (min-width: 768px){
     .sidebar-mini.sidebar-collapse .content-wrapper, .sidebar-mini.sidebar-collapse .right-side,
-    .sidebar-mini.sidebar-collapse .main-footer {
+    .sidebar-mini.sidebar-collapse .main-footer,.sidebar-mini.sidebar-collapse .main-header .navbar {
         margin-left: 75px !important;
     }
 
@@ -55,7 +55,7 @@
         font-size: 7px;
         margin-left: 0px;
     }
-    .sidebar-mini.sidebar-collapse .user-panel .sidebar-mini.sidebar-collapse .status .domain-link{
+    .sidebar-mini.sidebar-collapse .status .domain-link{
         display: none;
     }
     .sidebar-mini.sidebar-collapse .status .domain-icon-link{

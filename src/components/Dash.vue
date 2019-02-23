@@ -102,10 +102,6 @@ export default {
   width: 25%;
 }
 
-.user-panel {
-  height: 10em;
-  border-bottom:2px solid #f8f8f8;
-}
 
 hr.visible-xs-block {
   width: 100%;

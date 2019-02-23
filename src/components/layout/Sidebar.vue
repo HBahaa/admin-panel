@@ -54,6 +54,12 @@ export default {
 }
 </script>
 <style scope="local">
+
+.user-panel {
+  height: 10em;
+  border-bottom:2px solid #f8f8f8;
+  border-top:2px solid #f8f8f8;
+}
 .user-panel h4 {
   color: #b2b2b2;
   margin-top: 0;
@@ -69,6 +75,10 @@ export default {
   color: #b2b2b2;
   margin-bottom: 0;
 }
+.status h5 p{
+  color: #333;
+}
+
 .status p {
   margin-bottom: 0;
   font-size: 16px;
@@ -78,7 +88,7 @@ export default {
   vertical-align: middle;
   margin-left: 5px;
 }
-.status .domain-link{
+.status .domain-icon-link{
   display: none;
 }
 p.first-color{

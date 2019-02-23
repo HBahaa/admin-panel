@@ -6,7 +6,7 @@
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" role="navigation">
       <!-- Sidebar toggle button-->
-      <a href="javascript:;" data-toggle="offcanvas" role="button">
+      <a href="javascript:;" class="toggle-menu" data-toggle="offcanvas" role="button">
         <!-- <span class="sr-only">Toggle navigation</span> -->
         <img src="/static/svg-icons/Menu.svg" class="toggle-icon" alt="">
       </a>
@@ -26,9 +26,7 @@
 
 <script>
 import { mapState } from 'vuex'
-// import MessagesMenu from './MessagesMenu'
 import NotificationsMenu from './NotificationsMenu'
-// import TasksMenu from './TasksMenu'
 import UserMenu from './UserMenu'
 
 export default {
@@ -39,16 +37,19 @@ export default {
   },
   props: ['user'],
   computed: {
-    ...mapState([
-      'userInfo'
-    ])
+    ...mapState(['userInfo'])
   }
 }
 </script>
 <style>
-.toggle-icon{
+
+.toggle-icon {
   width: 25px;
   margin-top: 17px;
 }
+.navbar a.toggle-menu {
+  margin-left: -5px;
+}
+
 </style>
 
