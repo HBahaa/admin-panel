@@ -6,18 +6,29 @@
 
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
-        <p class="text-center">
-          <strong>Language Overview</strong>
-        </p>
-        <canvas id="pieChart"></canvas>
-        
+        <h4>Points</h4>
+        <div class="c100 p30 mid pie-chart">
+          <span>30%</span>
+          <div class="slice">
+            <div class="bar"></div>
+            <div class="fill"></div>
+          </div>
+        </div>
+        <div class="chart-desc">
+          <p class="first-color"><i class="fa fa-square" aria-hidden="true"></i> 3.000 Point</p>
+          <p class="second-color"><i class="fa fa-square" aria-hidden="true"></i> 10.000 Point</p>
+        </div>
       </div>
 
-      <div class="user-status">
+      <div class="status">
         <h5>Status</h5>
         <p>Staging <i class="fa fa-circle text-yellow"></i></p>
-        <h5>Primary Domain</h5>
-        <p>http://www.google.com</p>
+        <h5 class="domain-link">
+          Primary Domain
+          <p>http://www.google.com</p>
+        </h5>
+        
+        <a class="domain-icon-link" href="http://www.google.com"><i class="fa fa-globe fa-2x" aria-hidden="true"></i></a>
       </div>
 
       <!-- Sidebar Menu -->
@@ -29,61 +40,59 @@
 </template>
 <script>
 import SidebarMenu from './SidebarMenu'
-import Chart from 'chart.js'
 
 export default {
   name: 'Sidebar',
   props: ['user'],
   components: { SidebarMenu },
   mounted() {
-    window.jQuery('[data-toggle="hideseek"]').off().hideseek()
-    this.$nextTick(() => {
-      var pieChartCanvas1 = document.getElementById('pieChart').getContext('2d')
-      var pieConfig1 = {
-        type: 'doughnut',
-        data: {
-          labels: ['HTML', 'JavaScript', 'CSS'],
-          datasets: [{
-            data: [56.6, 37.7, 4.1],
-            backgroundColor: ['#00a65a', '#f39c12', '#00c0ef'],
-            hoverBackgroundColor: ['#00a65a', '#f39c12', '#00c0ef']
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: !this.isMobile,
-          legend: {
-            position: 'bottom',
-            display: true
-          }
-        }
-      }
-      new Chart(pieChartCanvas1, pieConfig1) // eslint-disable-line no-new
-    })
+    window
+      .jQuery('[data-toggle="hideseek"]')
+      .off()
+      .hideseek()
   }
 }
 </script>
 <style scope="local">
-.user-panel .image img {
-  border-radius: 50%;
+.user-panel h4 {
+  color: #b2b2b2;
+  margin-top: 0;
+  margin-bottom: 0;
 }
-.user-status{
+.status {
   min-height: 7em;
-  border-bottom:2px solid #f8f8f8;
+  border-bottom: 2px solid #f8f8f8;
   margin-bottom: 10px;
   padding: 5px 10px 10px;
 }
-.user-status h5{
+.status h5 {
   color: #b2b2b2;
   margin-bottom: 0;
 }
-.user-status p{
+.status p {
   margin-bottom: 0;
   font-size: 16px;
 }
-.user-status .fa{
+.status .fa.text-yellow {
   font-size: 10px;
   vertical-align: middle;
   margin-left: 5px;
+}
+.status .domain-link{
+  display: none;
+}
+p.first-color{
+ color: #002A3A;
+ margin-bottom: 0;
+}
+p.second-color{
+  color: #b2b2b2;
+ margin-bottom: 0;
+}
+.pie-chart{
+  float: right;
+}
+.chart-desc{
+  margin-top: 50px;
 }
 </style>
