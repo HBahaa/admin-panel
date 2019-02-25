@@ -1,5 +1,5 @@
 <template>
-  <section class="content">
+  <section class="content bg-color">
       <div class="row center-block">
       <h2>Programmes(17)</h2>
       <div class="col-md-12">
@@ -169,7 +169,7 @@ export default {
 </script>
 
 <style>
-.content{
+.bg-color{
   background-color: #fff;
 }
 /* Using the bootstrap style, but overriding the font to not draw in
