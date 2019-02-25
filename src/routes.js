@@ -5,7 +5,7 @@ import NotFoundView from './components/404.vue'
 // Import Views - Dash
 import DashboardView from './components/views/Dashboard.vue'
 import TablesView from './components/views/Tables.vue'
-import HomeView from './components/views/home.vue'
+import HomeView from './components/Home.vue'
 
 import TasksView from './components/views/Tasks.vue'
 import SettingView from './components/views/Setting.vue'
@@ -18,6 +18,10 @@ const routes = [
   {
     path: '/login',
     component: LoginView
+  },
+  {
+    path: '/home',
+    component: HomeView
   },
   {
     path: '/',
@@ -59,11 +63,6 @@ const routes = [
         component: ReposView,
         name: 'Repository',
         meta: {description: 'List of popular javascript repos'}
-      }, {
-        path: 'home',
-        component: HomeView,
-        name: 'home',
-        meta: {description: 'Home page'}
       }
 
     ]

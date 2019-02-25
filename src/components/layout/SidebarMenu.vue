@@ -2,7 +2,7 @@
   <ul class="sidebar-menu">
     <!-- <li class="header">TOOLS</li> -->
     <router-link tag="li" class="pageLink" to="/">
-      <a>
+      <a> 
         <!-- <i class="fa fa-desktop"></i> -->
         <img src="/static/svg-icons/Dashboard-S.svg" class="svg-icon" alt="">
         <span class="page">Dashboard</span>
