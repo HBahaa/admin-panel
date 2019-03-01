@@ -4,18 +4,22 @@ import NotFoundView from './components/404.vue'
 
 // Import Views - Dash
 import DashboardView from './components/views/Dashboard.vue'
-import EditSettingView from './components/views/setting/Edit.vue'
-import DomainsView from './components/views/setting/Domains.vue'
-import ProgrammePointsView from './components/views/setting/ProgrammePoints.vue'
-import SiteDesignEditView from './components/views/siteDesign/SiteDesignEdit.vue'
-import EmailTemplateEditView from './components/views/siteDesign/EmailTemplateEdit.vue'
-import AssetsView from './components/views/siteDesign/Assets.vue'
 import HomeView from './components/Home.vue'
 
 import TasksView from './components/views/Tasks.vue'
 import AccessView from './components/views/Access.vue'
 import ServerView from './components/views/Server.vue'
 import ReposView from './components/views/Repos.vue'
+
+// setting route
+import EditSettingView from './components/views/setting/Edit.vue'
+import DomainsView from './components/views/setting/Domains.vue'
+import ProgrammePointsView from './components/views/setting/ProgrammePoints.vue'
+
+// site design route
+import SiteDesignEditView from './components/views/siteDesign/SiteDesignEdit.vue'
+import EmailTemplateEditView from './components/views/siteDesign/EmailTemplateEdit.vue'
+import AssetsView from './components/views/siteDesign/Assets.vue'
 
 // Routes
 const routes = [
