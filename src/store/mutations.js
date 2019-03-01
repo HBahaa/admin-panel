@@ -1,5 +1,6 @@
 export default {
   TOGGLE_LOADING (state) {
+    console.log('test')
     state.callingAPI = !state.callingAPI
   },
   TOGGLE_SEARCHING (state) {

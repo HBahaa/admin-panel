@@ -4,7 +4,7 @@
 
     <div class="text-center col-sm-12">
       <!-- login form -->
-      <form @submit.prevent="checkCreds">
+      <form @submit.prevent="login">
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
           <input class="form-control" name="username" placeholder="Username" type="text" v-model="username">
@@ -95,6 +95,20 @@ export default {
     },
     resetResponse() {
       this.response = ''
+    },
+    login() {
+      let userlogin = {
+        email: 'prem@prem.com',
+        password: 'a12345678',
+        remember_me: 1
+      }
+      this.$store.dispatch('login', userlogin)
+      .then(resp => {
+        console.log('resp', resp)
+      })
+      .catch(error => {
+        console.log('error', error.response)
+      })
     }
   }
 }
