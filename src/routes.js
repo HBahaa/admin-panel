@@ -12,9 +12,11 @@ import SettingView from './components/views/Setting.vue'
 import AccessView from './components/views/Access.vue'
 import ServerView from './components/views/Server.vue'
 import ReposView from './components/views/Repos.vue'
+import addProgramm from './components/programm/add-programm.vue'
 
 // Routes
 const routes = [
+
   {
     path: '/login',
     component: LoginView
@@ -22,6 +24,10 @@ const routes = [
   {
     path: '/home',
     component: HomeView
+  },
+  {
+    path: '/add-programm',
+    component: addProgramm
   },
   {
     path: '/',
