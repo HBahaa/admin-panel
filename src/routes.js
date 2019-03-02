@@ -4,7 +4,15 @@ import NotFoundView from './components/404.vue'
 
 // Import Views - Dash
 import DashboardView from './components/views/Dashboard.vue'
-import HomeView from './components/Home.vue'
+
+//programm
+import HomeView from './components/programm/Home.vue'
+import reports from './components/programm/reports.vue'
+import clients from './components/programm/clients.vue'
+import userSearch from './components/programm/userSearch.vue'
+import userApproved from './components/programm/UserApproved.vue'
+
+
 
 import TasksView from './components/views/Tasks.vue'
 import AccessView from './components/views/Access.vue'
@@ -30,8 +38,24 @@ const routes = [
     component: LoginView
   },
   {
-    path: '/home',
+    path: '/',
     component: HomeView
+  },
+  {
+    path: '/reports',
+    component: reports
+  },
+  {
+    path: '/clients',
+    component: reports
+  },
+  {
+    path: '/user-search',
+    component: reports
+  },
+  {
+    path: '/user-approved',
+    component: reports
   },
   {
     path: '/add-programm',
