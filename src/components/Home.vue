@@ -364,4 +364,16 @@
     margin: 5px 0;
     padding: 0;
   }
+@media only screen and (max-width: 768px) {
+  .pull-right {
+    float: none !important;
+  }
+  .navbar-collapse {
+    background-color: white;
+    text-align: left;
+  }
+  .navbar-default {
+    max-width: 95%;
+  }
+}  
 </style>
