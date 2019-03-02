@@ -10,6 +10,7 @@ import TasksView from './components/views/Tasks.vue'
 import AccessView from './components/views/Access.vue'
 import ServerView from './components/views/Server.vue'
 import ReposView from './components/views/Repos.vue'
+import addProgramm from './components/programm/add-programm.vue'
 
 // setting route
 import EditSettingView from './components/views/setting/Edit.vue'
@@ -23,6 +24,7 @@ import AssetsView from './components/views/siteDesign/Assets.vue'
 
 // Routes
 const routes = [
+
   {
     path: '/login',
     component: LoginView
@@ -30,6 +32,10 @@ const routes = [
   {
     path: '/home',
     component: HomeView
+  },
+  {
+    path: '/add-programm',
+    component: addProgramm
   },
   {
     path: '/programmes/:id',
