@@ -34,15 +34,11 @@ const routes = [
     component: HomeView
   },
   {
-<<<<<<< HEAD
     path: '/add-programm',
     component: addProgramm
   },
   {
-    path: '/',
-=======
     path: '/programmes/:id',
->>>>>>> 865055d30193e770c1b4ed5f1f7e04815bd279f7
     component: DashView,
     children: [
       {
