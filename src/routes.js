@@ -10,7 +10,7 @@ import HomeView from './components/programm/Home.vue'
 import reports from './components/programm/reports.vue'
 import clients from './components/programm/clients.vue'
 import userSearch from './components/programm/userSearch.vue'
-import userApproved from './components/programm/UserApproved.vue'
+import userApproved from './components/programm/userApproved.vue'
 
 
 

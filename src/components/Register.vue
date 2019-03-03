@@ -6,10 +6,14 @@
       <!-- login form -->
       <form @submit.prevent="login">
         <div class="input-group">
-          <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+          <span class="input-group-addon"><i class="fa fa-user"></i></span>
           <input class="form-control" name="username" placeholder="Username" type="text" v-model="username">
         </div>
 
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+          <input class="form-control" name="email" placeholder="Email" type="text" v-model="username">
+        </div>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-lock"></i></span>
           <input class="form-control" name="password" placeholder="Password" type="password" v-model="password">
@@ -97,53 +101,17 @@ export default {
       this.response = ''
     },
     login() {
-      this.resetResponse();
-      
-      let data = {
-        'grant_type' : 'password',
-        'client_id': 2,
-        'client_secret' : 'lmtVLZvOW3udfX0mHESEXHzqMnXa9jF5UV0BHAIS' , 
-        'username' : 'user@user.com',
-        'password' : '123456',
-        'scope' : ''
+      let userlogin = {
+        email: 'prem@prem.com',
+        password: 'a12345678',
+        remember_me: 1
       }
-      this.$store.dispatch('userLogin', data)
+      this.$store.dispatch('login', userlogin)
       .then(resp => {
-        console.log('resp', resp);
-
-        /* Setting user in the state and caching record to the localStorage */
-        if (resp.data) {
-          var token = 'Bearer ' + resp.data.token
-          // this.$store.commit('SET_USER', resp.data)
-          this.$store.commit('SET_TOKEN', token)
-
-          if (window.localStorage) {
-            window.localStorage.setItem('user', JSON.stringify(data.user))
-            window.localStorage.setItem('token', token)
-          }
-
-          this.$router.push(data.redirect ? data.redirect : '/')
-        }
+        console.log('resp', resp)
       })
       .catch(error => {
         console.log('error', error.response)
-        
-        if (error.response.status == 401) {
-          let errorName = error.response.data.error;
-          if (errorName) {
-              this.response =
-                errorName === 'invalid_client' ? 'Username/Password incorrect. Please try again.' : error.response.data.message;
-            } else {
-              this.response = error.response.data.message
-            }
-
-            return
-          
-        }else{
-          // this.$store.commit('TOGGLE_LOADING')
-          this.response = 'Server appears to be offline'
-          // this.toggleLoading()
-        }
       })
     }
   }

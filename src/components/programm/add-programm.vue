@@ -150,7 +150,7 @@
 
 </script>
 
-<style>
+<style scoped>
   body {
     background-color: #fff !important;
   }

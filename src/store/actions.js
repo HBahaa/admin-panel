@@ -1,5 +1,5 @@
 import axios from 'axios'
-var baseUrl = 'http://backend.nomadicbees.com/api/'
+var baseUrl = 'http://api.nomadicbees.com/api/'
 
 let header2 = {
   'async': true,
@@ -11,13 +11,6 @@ let header2 = {
 }
 
 export default {
-  login(vuexContext, data) {
-    return axios.post(baseUrl + 'auth/login', data, header2)
-  },
-  register(vuexContext, data) {
-    return axios.post(baseUrl + 'auth/login', data, header2)
-  },
-
   // auth user
   userLogin(vuexContext, data) {
     return axios.post(baseUrl + 'oauth/token', data, header2)
