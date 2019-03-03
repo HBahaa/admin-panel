@@ -98,7 +98,7 @@ export default {
   },
 
   // program
-  getPrograms(vuexContext) {
+  getProgramms(vuexContext) {
     return axios.get(baseUrl + 'program', header2)
   },
   createProgram(vuexContext) {

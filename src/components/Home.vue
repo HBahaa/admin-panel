@@ -264,9 +264,19 @@
   export default {
     name: 'Home',
     mounted() {
+      this.getProgramms()
       this.$nextTick(() => {
         $('#example1').DataTable()
       })
+    },
+    methods:{
+      getProgramms(){
+        this.$store.dispatch('getProgramms').then(resp=>{
+          console.log("resp", resp)
+        }).catch(error=>{
+          console.log("error", error)
+        })
+      }
     }
   }
 
