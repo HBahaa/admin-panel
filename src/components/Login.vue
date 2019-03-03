@@ -113,14 +113,14 @@ export default {
 
         /* Setting user in the state and caching record to the localStorage */
         if (resp.data) {
-          // var token = 'Bearer ' + resp.data.token/programmes
+          var token = 'Bearer ' + resp.data.token
           // this.$store.commit('SET_USER', resp.data)
           this.$store.commit('SET_TOKEN', token)
 
-          // if (window.localStorage) {
+          if (window.localStorage) {
           //   window.localStorage.setItem('user', JSON.stringify(data.user))
-          //   window.localStorage.setItem('token', token)
-          // }
+            window.localStorage.setItem('token', token)
+          }
 
           this.$router.push('/programmes/22')
         }
