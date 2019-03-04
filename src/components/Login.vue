@@ -98,13 +98,13 @@ export default {
     },
     login() {
       this.resetResponse();
-      
+
       let data = {
         'grant_type' : 'password',
         'client_id': 2,
         'client_secret' : 'lmtVLZvOW3udfX0mHESEXHzqMnXa9jF5UV0BHAIS' , 
-        'username' : 'user@user.com',
-        'password' : '123456',
+        'username' : this.username,
+        'password' : this.password,
         'scope' : ''
       }
       this.$store.dispatch('userLogin', data)
@@ -118,11 +118,11 @@ export default {
           this.$store.commit('SET_TOKEN', token)
 
           if (window.localStorage) {
-            window.localStorage.setItem('user', JSON.stringify(data.user))
+          //   window.localStorage.setItem('user', JSON.stringify(data.user))
             window.localStorage.setItem('token', token)
           }
 
-          this.$router.push(data.redirect ? data.redirect : '/')
+          this.$router.push('/programmes/22')
         }
       })
       .catch(error => {
