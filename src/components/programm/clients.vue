@@ -34,14 +34,14 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                 aria-expanded="false">Users <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="/userSearch">Search</a></li>
-                <li><a href="/userApproved">Approve (1)</a></li>
+                <li><a href="/user-search">Search</a></li>
+                <li><a href="/user-approved">Approve (1)</a></li>
               </ul>
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <button  type="button" class="btn nav-btn-default mt-3">+ Add Programme</button>
+              <button  type="button" class="btn nav-btn-default mt-3" @click="addProgramm">+ Add Programme</button>
             </li>
             <li>
               <a href="#">
@@ -97,7 +97,7 @@
     <section class="content container bg-color mt-5">
 
       <div class="row center-block">
-        <h2>Programmes(17)</h2>
+        <h2>clients({{clients.length}})</h2>
         <div class="col-md-12">
           <div class="box">
 
@@ -118,120 +118,35 @@
                       <thead>
                         <tr role="row">
                           <th aria-label="Rendering engine: activate to sort column descending" aria-sort="ascending"
-                            style="width: 167px;" colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting_asc">Name</th>
+                            style="width: 167px;" colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting_asc">Client Name</th>
                           <th aria-label="Browser: activate to sort column ascending" style="width: 207px;" colspan="1"
-                            rowspan="1" aria-controls="example1" tabindex="0" class="sorting">Internal ID</th>
+                            rowspan="1" aria-controls="example1" tabindex="0" class="sorting">Agency</th>
                           <th aria-label="Platform(s): activate to sort column ascending" style="width: 182px;" colspan="1"
-                            rowspan="1" aria-controls="example1" tabindex="0" class="sorting">Client</th>
+                            rowspan="1" aria-controls="example1" tabindex="0" class="sorting">Contact Name</th>
                           <th aria-label="Engine version: activate to sort column ascending" style="width: 142px;"
-                            colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting">Status</th>
+                            colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting">Contact Email</th>
                           <th aria-label="CSS grade: activate to sort column ascending" style="width: 101px;" colspan="1"
-                            rowspan="1" aria-controls="example1" tabindex="0" class="sorting">User start</th>
+                            rowspan="1" aria-controls="example1" tabindex="0" class="sorting">Programmes</th>
                           <th aria-label="CSS grade: activate to sort column ascending" style="width: 101px;" colspan="1"
-                            rowspan="1" aria-controls="example1" tabindex="0" class="sorting">User end</th>
+                            rowspan="1" aria-controls="example1" tabindex="0" class="sorting">Admins</th>
+                            <th aria-label="CSS grade: activate to sort column ascending" style="width: 101px;" colspan="1"
+                            rowspan="1" aria-controls="example1" tabindex="0" class="sorting">Delete</th>
 
                         </tr>
                       </thead>
-                      <tbody>
-                        <tr class="even table-font" role="row">
-                          <td class="sorting_1">Blink</td>
-                          <td>Iridium 54.0</td>
-                          <td>GNU/Linux</td>
-                          <td>54</td>
-                          <td>A</td>
-                          <td>c</td>
+                       <tbody> 
+                        <tr class="table-font" role="row"  v-for="(client,i) in clients" :key="i">
+                          <td class="sorting_1">{{client.name}}</td>
+                          <td>{{client.agency}}</td>
+                          <td>{{client.contact_name}}</td>
+                          <td>{{client.contact_email}}</td>
+                          <td>9</td>
+                          <td>9</td>
+                          <td>9</td>
+
 
                         </tr>
-                        <tr class="odd table-font" role="row">
-                          <td class="sorting_1">Gecko</td>
-                          <td>Firefox 1.0</td>
-                          <td>Win 98+ / OSX.2+</td>
-                          <td>1.7</td>
-                          <td>A</td>
-                          <td>B</td>
-
-                        </tr>
-                        <tr class="even table-font" role="row">
-                          <td class="sorting_1">Gecko</td>
-                          <td>Firefox 1.5</td>
-                          <td>Win 98+ / OSX.2+</td>
-                          <td>1.8</td>
-                          <td>A</td>
-                          <td>B</td>
-
-                        </tr>
-                        <tr class="odd table-font" role="row">
-                          <td class="sorting_1">Gecko</td>
-                          <td>Firefox 2.0</td>
-                          <td>Win 98+ / OSX.2+</td>
-                          <td>1.8</td>
-                          <td>A</td>
-                          <td>B</td>
-
-                        </tr>
-                        <tr class="even table-font" role="row">
-                          <td class="sorting_1">Gecko</td>
-                          <td>Firefox 3.0</td>
-                          <td>Win 2k+ / OSX.3+</td>
-                          <td>1.9</td>
-                          <td>A</td>
-                          <td>B</td>
-
-                        </tr>
-                        <tr class="odd table-font" role="row">
-                          <td class="sorting_1">Gecko</td>
-                          <td>Camino 1.0</td>
-                          <td>OSX.2+</td>
-                          <td>1.8</td>
-                          <td>A</td>
-                          <td>B</td>
-
-                        </tr>
-                        <tr class="even table-font" role="row">
-                          <td class="sorting_1">Gecko</td>
-                          <td>Camino 1.5</td>
-                          <td>OSX.3+</td>
-                          <td>1.8</td>
-                          <td>A</td>
-                          <td>B</td>
-
-                        </tr>
-                        <tr class="odd table-font" role="row">
-                          <td class="sorting_1">Gecko</td>
-                          <td>Netscape 7.2</td>
-                          <td>Win 95+ / Mac OS 8.6-9.2</td>
-                          <td>1.7</td>
-                          <td>A</td>
-                          <td>B</td>
-
-                        </tr>
-                        <tr class="even table-font" role="row">
-                          <td class="sorting_1">Gecko</td>
-                          <td>Netscape Browser 8</td>
-                          <td>Win 98SE+</td>
-                          <td>1.7</td>
-                          <td>A</td>
-                          <td>B</td>
-
-                        </tr>
-                        <tr class="odd table-font" role="row">
-                          <td class="sorting_1">Gecko</td>
-                          <td>Netscape Navigator 9</td>
-                          <td>Win 98+ / OSX.2+</td>
-                          <td>1.8</td>
-                          <td>A</td>
-                          <td>B</td>
-
-                        </tr>
-                        <tr class="even table-font" role="row">
-                          <td class="sorting_1">Gecko</td>
-                          <td>Mozilla 1.0</td>
-                          <td>Win 95+ / OSX.1+</td>
-                          <td>1</td>
-                          <td>A</td>
-                          <td>B</td>
-
-                        </tr>
+                       
                       </tbody>
                       <!-- <tfoot>
                       <tr>
@@ -261,22 +176,50 @@
   require('datatables.net')
   require('datatables.net-bs')
 
-  export default {
+   export default {
     name: 'Home',
-    mounted() {
-      this.$nextTick(() => {
-        $('#example1').DataTable()
-      })
+     data(){
+      return{
+        clients:{}
+      }
     },
+    mounted() {
+      console.log('sssssssss')
+      this.getClients()
+    },
+    
+       methods:{
+       getClients(){
+        console.log('wwww')
+        this.$store.dispatch('getClient').then(resp=>{
+          this.clients=resp.data.data
+          this.$nextTick(() => {
+        $('#example1').DataTable()
+          console.log("error", resp)
+
+      })
+        }).catch(error=>{
+          console.log("error", error)
+        })
+      },
+        addProgramm(){
+this.$router.push('add-programm');
+        
+      }
+    }
+    
   }
 
 </script>
 
-<style>
+<style scoped>
   .bg-color {
     background-color: #fff;
   }
 
+.sorting_1{
+  color: #B4D333;
+}
   /* Using the bootstrap style, but overriding the font to not draw in
    the Glyphicons Halflings font as an additional requirement for sorting icons.
 
@@ -307,7 +250,7 @@
   }
 
   .table-font {
-    font-size: 20px;
+    font-size: 17px;
   }
 
   .navbar-logo img {

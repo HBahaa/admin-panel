@@ -47,15 +47,15 @@ const routes = [
   },
   {
     path: '/clients',
-    component: reports
+    component: clients
   },
   {
     path: '/user-search',
-    component: reports
+    component: userSearch
   },
   {
     path: '/user-approved',
-    component: reports
+    component: userApproved
   },
   {
     path: '/add-programm',

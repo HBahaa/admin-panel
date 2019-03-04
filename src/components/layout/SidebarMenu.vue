@@ -1,15 +1,14 @@
 <template>
   <ul class="sidebar-menu">
     <!-- <li class="header">TOOLS</li> -->
-    <router-link tag="li" class="pageLink" to="/">
-      <a> 
+   
+
+    <li class="treeview">
+      <a class="pageLink" href="#"> 
         <!-- <i class="fa fa-desktop"></i> -->
         <img src="/static/svg-icons/Dashboard-S.svg" class="svg-icon" alt="">
         <span class="page">Dashboard</span>
       </a>
-    </router-link>
-
-    <li class="treeview">
       <a href="#">
         <img src="/static/svg-icons/Settings.svg" class="svg-icon" alt="">
         <span class="treeview-title">Settings</span>

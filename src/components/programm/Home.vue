@@ -34,14 +34,14 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                 aria-expanded="false">Users <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="/userSearch">Search</a></li>
-                <li><a href="/userApproved">Approve (1)</a></li>
+                <li><a href="/user-search">Search</a></li>
+                <li><a href="/user-approved">Approve (1)</a></li>
               </ul>
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <button  type="button" class="btn nav-btn-default mt-3">+ Add Programme</button>
+              <button  type="button" class="btn nav-btn-default mt-3" @click="addProgramm">+ Add Programme</button>
             </li>
             <li>
               <a href="#">
@@ -97,7 +97,7 @@
     <section class="content container bg-color mt-5">
 
       <div class="row center-block">
-        <h2>Programmes(17)</h2>
+        <h2>Programmes({{programms.length}})</h2>
         <div class="col-md-12">
           <div class="box">
 
@@ -132,121 +132,23 @@
 
                         </tr>
                       </thead>
-                      <tbody>
-                        <tr class="even table-font" role="row">
-                          <td class="sorting_1">Blink</td>
-                          <td>Iridium 54.0</td>
-                          <td>GNU/Linux</td>
-                          <td>54</td>
-                          <td>A</td>
-                          <td>c</td>
+                      <tbody> 
+                        <tr class="table-font" role="row"  v-for="(programm,i) in programms" :key="i">
+                          <td class="sorting_1" @click="showDashboard">{{programm.name}}</td>
+                          <td>CCAD</td>
+                          <td>My client</td>
+                          <td>Staging</td>
+                          <td>{{programm.user_start_date}}</td>
+                          <td>{{programm.user_end_date}}</td>
 
                         </tr>
-                        <tr class="odd table-font" role="row">
-                          <td class="sorting_1">Gecko</td>
-                          <td>Firefox 1.0</td>
-                          <td>Win 98+ / OSX.2+</td>
-                          <td>1.7</td>
-                          <td>A</td>
-                          <td>B</td>
-
-                        </tr>
-                        <tr class="even table-font" role="row">
-                          <td class="sorting_1">Gecko</td>
-                          <td>Firefox 1.5</td>
-                          <td>Win 98+ / OSX.2+</td>
-                          <td>1.8</td>
-                          <td>A</td>
-                          <td>B</td>
-
-                        </tr>
-                        <tr class="odd table-font" role="row">
-                          <td class="sorting_1">Gecko</td>
-                          <td>Firefox 2.0</td>
-                          <td>Win 98+ / OSX.2+</td>
-                          <td>1.8</td>
-                          <td>A</td>
-                          <td>B</td>
-
-                        </tr>
-                        <tr class="even table-font" role="row">
-                          <td class="sorting_1">Gecko</td>
-                          <td>Firefox 3.0</td>
-                          <td>Win 2k+ / OSX.3+</td>
-                          <td>1.9</td>
-                          <td>A</td>
-                          <td>B</td>
-
-                        </tr>
-                        <tr class="odd table-font" role="row">
-                          <td class="sorting_1">Gecko</td>
-                          <td>Camino 1.0</td>
-                          <td>OSX.2+</td>
-                          <td>1.8</td>
-                          <td>A</td>
-                          <td>B</td>
-
-                        </tr>
-                        <tr class="even table-font" role="row">
-                          <td class="sorting_1">Gecko</td>
-                          <td>Camino 1.5</td>
-                          <td>OSX.3+</td>
-                          <td>1.8</td>
-                          <td>A</td>
-                          <td>B</td>
-
-                        </tr>
-                        <tr class="odd table-font" role="row">
-                          <td class="sorting_1">Gecko</td>
-                          <td>Netscape 7.2</td>
-                          <td>Win 95+ / Mac OS 8.6-9.2</td>
-                          <td>1.7</td>
-                          <td>A</td>
-                          <td>B</td>
-
-                        </tr>
-                        <tr class="even table-font" role="row">
-                          <td class="sorting_1">Gecko</td>
-                          <td>Netscape Browser 8</td>
-                          <td>Win 98SE+</td>
-                          <td>1.7</td>
-                          <td>A</td>
-                          <td>B</td>
-
-                        </tr>
-                        <tr class="odd table-font" role="row">
-                          <td class="sorting_1">Gecko</td>
-                          <td>Netscape Navigator 9</td>
-                          <td>Win 98+ / OSX.2+</td>
-                          <td>1.8</td>
-                          <td>A</td>
-                          <td>B</td>
-
-                        </tr>
-                        <tr class="even table-font" role="row">
-                          <td class="sorting_1">Gecko</td>
-                          <td>Mozilla 1.0</td>
-                          <td>Win 95+ / OSX.1+</td>
-                          <td>1</td>
-                          <td>A</td>
-                          <td>B</td>
-
-                        </tr>
+                       
                       </tbody>
-                      <!-- <tfoot>
-                      <tr>
-                        <th colspan="1" rowspan="1">Rendering engine</th>
-                        <th colspan="1" rowspan="1">Browser</th>
-                        <th colspan="1" rowspan="1">Platform(s)</th>
-                        <th colspan="1" rowspan="1">Engine version</th>
-                        <th colspan="1" rowspan="1">CSS grade</th>
-                      </tr>
-                    </tfoot> -->
+                    
                     </table>
                   </div>
                 </div>
               </div>
-              <!-- /.box-body -->
             </div>
           </div>
         </div>
@@ -263,31 +165,53 @@
 
   export default {
     name: 'Home',
+    data(){
+      return{
+        programms:{}
+      }
+    },
     mounted() {
-      this.$nextTick(() => {
+      this.getProgramms();
+      
+    },
+    methods:{
+       getProgramms(){
+        console.log('wwww')
+        this.$store.dispatch('getProgramms').then(resp=>{
+          console.log("resp", resp)
+          this.programms=resp.data.data
+          console.log('this.programs',this.programms)
+          this.$nextTick(() => {
         $('#example1').DataTable()
       })
-    },
+        }).catch(error=>{
+          console.log("error", error)
+        })
+      },
+      showDashboard(){
+console.log('ssss')
+this.$router.push('programmes/dashboard');
+      },
+      addProgramm(){
+this.$router.push('add-programm');
+        
+      }
+    }
   }
 
 </script>
 
-<style>
+<style scoped>
   .bg-color {
     background-color: #fff;
   }
 
-  /* Using the bootstrap style, but overriding the font to not draw in
-   the Glyphicons Halflings font as an additional requirement for sorting icons.
-
-   An alternative to the solution active below is to use the jquery style
-   which uses images, but the color on the images does not match adminlte.
-
-@import url('/static/js/plugins/datatables/jquery.dataTables.min.css');
-*/
-
   @import url('/static/js/plugins/datatables/dataTables.bootstrap.css');
 
+.sorting_1{
+  color: #B4D333;
+      cursor: pointer;
+}
   table.dataTable thead .sorting:after,
   table.dataTable thead .sorting_asc:after,
   table.dataTable thead .sorting_desc:after {
@@ -307,7 +231,7 @@
   }
 
   .table-font {
-    font-size: 20px;
+    font-size: 17px ;
   }
 
   .navbar-logo img {
