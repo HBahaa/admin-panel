@@ -155,8 +155,10 @@ export default {
   padding: 10em;
 }
 
-html,
-body,
+#login{
+  background-color: #282b30 !important;
+  height: 100vh;
+}
 .container-table {
   height: 100%;
   background-color: #282b30 !important;
