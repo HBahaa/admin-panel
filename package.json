@@ -10,7 +10,8 @@
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
     "deploy": "netlify deploy dist",
-    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
+    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
+    "start": "node server.js"
   },
   "dependencies": {
     "axios": "^0.15.3",
