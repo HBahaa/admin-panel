@@ -99,7 +99,7 @@ export default {
 
   // program
   getProgramms(vuexContext) {
-    return axios.get(baseUrl + 'program', header2)
+    return axios.get(baseUrl + 'programs', header2)
   },
   createProgram(vuexContext) {
     return axios.post(baseUrl + 'program', header2)

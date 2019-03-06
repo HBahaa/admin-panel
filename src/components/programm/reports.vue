@@ -34,14 +34,14 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                 aria-expanded="false">Users <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="/userSearch">Search</a></li>
-                <li><a href="/userApproved">Approve (1)</a></li>
+                <li><a href="/user-search">Search</a></li>
+                <li><a href="/user-approved">Approve (1)</a></li>
               </ul>
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <button  type="button" class="btn nav-btn-default mt-3">+ Add Programme</button>
+              <button  type="button" class="btn nav-btn-default mt-3" @click="addProgramm">+ Add Programme</button>
             </li>
             <li>
               <a href="#">
@@ -97,7 +97,7 @@
     <section class="content container bg-color mt-5">
 
       <div class="row center-block">
-        <h2>Programmes(17)</h2>
+        <h2>Reports(17)</h2>
         <div class="col-md-12">
           <div class="box">
 
@@ -268,11 +268,17 @@
         $('#example1').DataTable()
       })
     },
+    methods:{
+        addProgramm(){
+this.$router.push('add-programm');
+        
+      }
+    }
   }
 
 </script>
 
-<style>
+<style scoped>
   .bg-color {
     background-color: #fff;
   }
@@ -307,7 +313,7 @@
   }
 
   .table-font {
-    font-size: 20px;
+    font-size: 17px;
   }
 
   .navbar-logo img {
