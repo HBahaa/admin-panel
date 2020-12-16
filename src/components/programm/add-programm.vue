@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid bg-white">  
+  <div class="container-fluid bg-white">
     <div class="container p-0 mb-5">
       <div class="row m-0 p-0">
         <div class="col-xs-12 mb-5">
@@ -122,19 +122,29 @@
           </div>
           <div class="row m-0 p-0">
             <div class="col-xs-6 mb-4">
-            <label>Default Local </label>
-            <select class="form-control">
-              <option>EN</option>
-              <option>AR</option>
-            </select>
+              <label>Default Local </label>
+              <select class="form-control">
+                <option>EN</option>
+                <option>AR</option>
+              </select>
+            </div>
+            <div class="col-xs-6 mb-4">
+              <label>Status</label>
+              <select class="form-control">
+                <option>Status</option>
+                <option>status for</option>
+              </select>
+            </div>
           </div>
-          <div class="col-xs-6 mb-4">
-            <label>Status</label>
-            <select class="form-control">
-              <option>Status</option>
-              <option>status for</option>
-            </select>
-          </div>
+          <div class="row m-0 p-0">
+            <div class="col-xs-6 mb-4">
+              <label>User Start Date:</label>
+              <input type="text" class="form-control" id="userStartDatepicker" size="30">
+            </div>
+            <div class="col-xs-6 mb-4">
+              <label>User End Date:</label>
+              <input type="text" class="form-control" id="userEndDatepicker" size="30">
+            </div>
           </div>
 
         </form>
@@ -146,6 +156,7 @@
 <script>
   export default {
     name: 'add-programm'
+
   }
 
 </script>
